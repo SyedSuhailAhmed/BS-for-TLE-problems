@@ -1,3 +1,5 @@
+whenever u find duplicates,skip the duplicates or use dictionary freq.get(val,0)+1
+
 Rearrange Sequence - 2 bookmark_borderYou are given an array of size N containing integers which may not be unique. Find the size of the largest subarray that can be rearranged to form a strictly contiguous sequence.
 
 Input Format
