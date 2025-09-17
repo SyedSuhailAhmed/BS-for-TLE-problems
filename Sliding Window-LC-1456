@@ -1,0 +1,43 @@
+Given a string s and an integer k, return the maximum number of vowel letters in any substring of s with length k.
+
+Vowel letters in English are 'a', 'e', 'i', 'o', and 'u'.
+
+ 
+
+Example 1:
+
+Input: s = "abciiidef", k = 3
+Output: 3
+Explanation: The substring "iii" contains 3 vowel letters.
+Example 2:
+
+Input: s = "aeiou", k = 2
+Output: 2
+Explanation: Any substring of length 2 contains 2 vowels.
+Example 3:
+
+Input: s = "leetcode", k = 3
+Output: 2
+Explanation: "lee", "eet" and "ode" contain 2 vowels.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+this looks like sliding window problem,so in this we maintain a sliding window that moves +=1 and removes count from back if it is vowel else nothing and +count if front +=1 is a vowel,in a while loop and 
+select the max element.
+s=input()
+k=int(input())
+l=['a','e','i','o','u']
+        ans=0
+        for i in range(k):
+            if s[i] in l:
+                ans+=1
+        i=0
+        j=k-1
+        c=ans
+        while j<len(s)-1:
+            if s[i] in l:
+                c-=1
+            i+=1
+            j+=1
+            if s[j] in l:
+                c+=1
+            ans=max(ans,c)
+        return ans
